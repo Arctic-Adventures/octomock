@@ -1,4 +1,4 @@
-import { Scenario } from "./../../Scenarios/Scenario";
+import { Scenario } from "../../Scenarios/Scenario";
 import { Flow, FlowResult } from "../Flow";
 import { BookingUpdateDateScenario } from "../../Scenarios/Booking/Update/BookingUpdateDate";
 import { BookingUpdateUnitItemsScenario } from "../../Scenarios/Booking/Update/BookingUpdateUnitItems";

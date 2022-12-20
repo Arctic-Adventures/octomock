@@ -1,4 +1,4 @@
-import { Result } from "./../../../api/types";
+import { Result } from "../../../api/types";
 import { Booking } from "@octocloud/types";
 import { Scenario } from "../../Scenario";
 import { BookingReservationScenarioHelper } from "../../../helpers/BookingReservationScenarioHelper";

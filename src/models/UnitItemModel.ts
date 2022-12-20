@@ -7,7 +7,7 @@ import {
   UnitItem,
   Pricing,
 } from "@octocloud/types";
-import { CapableToPOJOType } from "./../interfaces/Capable";
+import { CapableToPOJOType } from "../interfaces/Capable";
 import { Capable } from "../interfaces/Capable";
 
 export class UnitItemModel implements Capable {

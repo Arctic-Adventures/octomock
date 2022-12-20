@@ -5,7 +5,7 @@ import {
   extendBookingBodySchema,
   updateBookingBodySchema,
 } from "@octocloud/types";
-import { BookingController } from "./../../controllers/BookingController";
+import { BookingController } from "../../controllers/BookingController";
 import { getCapabilities } from "../common";
 import {
   getBookingSchema,
@@ -18,7 +18,7 @@ import {
   updateBookingSchema,
   createBookingSchema,
   CreateBookingSchema,
-} from "./../../schemas/Booking";
+} from "../../schemas/Booking";
 
 export const bookingRouter = new Router();
 

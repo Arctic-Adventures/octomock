@@ -1,4 +1,4 @@
-import { InvalidAvailabilityIdErrorValidator } from "./../../../../../validators/backendValidator/Error/InvalidAvailabilityIdErrorValidator";
+import { InvalidAvailabilityIdErrorValidator } from "../../../../../validators/backendValidator/Error/InvalidAvailabilityIdErrorValidator";
 import { Scenario } from "../../Scenario";
 import { BookingReservationScenarioHelper } from "../../../helpers/BookingReservationScenarioHelper";
 import { Booking } from "@octocloud/types";

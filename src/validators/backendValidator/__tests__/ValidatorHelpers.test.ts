@@ -4,7 +4,7 @@ import {
   NumberArrayValidator,
   NullValidator,
   ArrayValidator,
-} from "./../ValidatorHelpers";
+} from "../ValidatorHelpers";
 import {
   StringValidator,
   ValidatorError,

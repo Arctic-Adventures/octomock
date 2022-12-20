@@ -1,5 +1,5 @@
-import { ProductModelStorage } from "./../storage/ProductStorage";
-import { ProductModel } from "./../models/Product";
+import { ProductModelStorage } from "../storage/ProductStorage";
+import { ProductModel } from "../models/Product";
 
 interface IProductRepository {
   getProducts(): ProductModel[];

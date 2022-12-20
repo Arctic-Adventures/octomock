@@ -1,4 +1,4 @@
-import { Scenario } from "./../../Scenarios/Scenario";
+import { Scenario } from "../../Scenarios/Scenario";
 import { GetProductScenario } from "../../Scenarios/Product/GetProduct";
 import { GetProductInvalidScenario } from "../../Scenarios/Product/GetProductInvalid";
 import { GetProductsScenario } from "../../Scenarios/Product/GetProducts";

@@ -1,4 +1,4 @@
-import { ValidatedError } from "./../../../validators/backendValidator/Error/index";
+import { ValidatedError } from "../../../validators/backendValidator/Error/index";
 
 export type ApiParams = {
   headers?: Record<string, string>;

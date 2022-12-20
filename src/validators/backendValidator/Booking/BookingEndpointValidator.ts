@@ -1,4 +1,4 @@
-import { GetBookingsSchema } from "./../../../schemas/Booking";
+import { GetBookingsSchema } from "../../../schemas/Booking";
 import {
   Booking,
   CreateBookingBodySchema,

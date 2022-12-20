@@ -1,5 +1,5 @@
 import * as R from "ramda";
-import { ProductValidator } from "./../../../validators/backendValidator/Product/ProductValidator";
+import { ProductValidator } from "../../../validators/backendValidator/Product/ProductValidator";
 import { Product } from "@octocloud/types";
 import { ScenarioHelper, ScenarioHelperData } from "./ScenarioHelper";
 import { ValidatorError } from "../../../validators/backendValidator/ValidatorHelpers";

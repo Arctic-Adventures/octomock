@@ -1,4 +1,4 @@
-import { ProductConfigModel } from "./../models/ProductConfig";
+import { ProductConfigModel } from "../models/ProductConfig";
 import {
   Pricing,
   UnitType,
@@ -7,8 +7,8 @@ import {
   Currency,
   DurationUnit,
 } from "@octocloud/types";
-import { ProductModel } from "./../models/Product";
-import { ProductBuilder } from "./../builders/ProductBuilder";
+import { ProductModel } from "../models/Product";
+import { ProductBuilder } from "../builders/ProductBuilder";
 import { UnitConfigModel } from "../models/UnitConfig";
 import { OptionConfigModel } from "../models/OptionConfig";
 import {

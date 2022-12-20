@@ -1,4 +1,4 @@
-import { BookingEndpointValidator } from "./../../../validators/backendValidator/Booking/BookingEndpointValidator";
+import { BookingEndpointValidator } from "../../../validators/backendValidator/Booking/BookingEndpointValidator";
 import { Booking, CreateBookingBodySchema } from "@octocloud/types";
 import { BookingValidator } from "../../../validators/backendValidator/Booking/BookingValidator";
 import {

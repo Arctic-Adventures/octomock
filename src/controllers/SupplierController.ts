@@ -1,5 +1,5 @@
 import { Supplier } from "@octocloud/types";
-import { SupplierService } from "./../services/SupplierService";
+import { SupplierService } from "../services/SupplierService";
 
 interface ISupplierController {
   getSuppliers(): Promise<Supplier[]>;

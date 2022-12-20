@@ -4,8 +4,8 @@ import {
   BookingStatus,
   BookingUnitItemSchema,
 } from "@octocloud/types";
-import { OptionModel } from "./../models/Option";
-import { UnprocessableEntityError } from "./../models/Error";
+import { OptionModel } from "../models/Option";
+import { UnprocessableEntityError } from "../models/Error";
 import {
   CancelBookingSchema,
   ConfirmBookingSchema,
@@ -14,9 +14,9 @@ import {
   GetBookingsSchema,
   UpdateBookingSchema,
   CreateBookingSchema,
-} from "./../schemas/Booking";
-import { AvailabilityService } from "./../services/AvailabilityService";
-import { ProductService } from "./../services/ProductService";
+} from "../schemas/Booking";
+import { AvailabilityService } from "../services/AvailabilityService";
+import { ProductService } from "../services/ProductService";
 import { BookingService } from "../services/BookingService";
 import { BookingBuilder } from "../builders/BookingBuilder";
 import * as R from "ramda";

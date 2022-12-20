@@ -1,4 +1,4 @@
-import { SupplierController } from "./../../controllers/SupplierController";
+import { SupplierController } from "../../controllers/SupplierController";
 import Router from "@koa/router";
 
 export const supplierRouter = new Router();

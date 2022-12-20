@@ -1,4 +1,4 @@
-import { AvailabilityConfigModel } from "./../models/AvailabilityConfig";
+import { AvailabilityConfigModel } from "../models/AvailabilityConfig";
 import {
   CapabilityId,
   AvailabilityStatus,

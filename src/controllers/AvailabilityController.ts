@@ -3,7 +3,7 @@ import {
   Availability,
   AvailabilityBodySchema,
 } from "@octocloud/types";
-import { AvailabilityService } from "./../services/AvailabilityService";
+import { AvailabilityService } from "../services/AvailabilityService";
 
 interface IAvailabilityController {
   getAvailability(

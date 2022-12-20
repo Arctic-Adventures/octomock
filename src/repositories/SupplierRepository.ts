@@ -1,4 +1,4 @@
-import { SupplierStorage } from "./../storage/SupplierStorage";
+import { SupplierStorage } from "../storage/SupplierStorage";
 import { Supplier } from "@octocloud/types";
 
 interface ISupplierRepository {

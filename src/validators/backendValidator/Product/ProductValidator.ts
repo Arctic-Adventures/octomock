@@ -1,4 +1,4 @@
-import { ArrayValidator } from "./../ValidatorHelpers";
+import { ArrayValidator } from "../ValidatorHelpers";
 import {
   CapabilityId,
   Product,

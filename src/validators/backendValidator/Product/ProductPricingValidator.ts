@@ -5,7 +5,7 @@ import {
   EnumValidator,
   ValidatorError,
   ModelValidator,
-} from "./../ValidatorHelpers";
+} from "../ValidatorHelpers";
 
 export class ProductPricingValidator implements ModelValidator {
   private path: string;

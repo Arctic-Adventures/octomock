@@ -1,5 +1,5 @@
 import { ValidatedError } from "./index";
-import { NumberValidator } from "./../ValidatorHelpers";
+import { NumberValidator } from "../ValidatorHelpers";
 import {
   INVALID_AVAILABILITY_ID,
   STATUS_BAD_REQUEST,

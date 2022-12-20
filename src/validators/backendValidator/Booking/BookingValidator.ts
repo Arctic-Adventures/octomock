@@ -1,4 +1,4 @@
-import { TicketValidator } from "./../Ticket/TicketValidator";
+import { TicketValidator } from "../Ticket/TicketValidator";
 import {
   CapabilityId,
   Booking,
