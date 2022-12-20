@@ -6,7 +6,7 @@ import {
   Pricing,
   DurationUnit,
 } from "@octocloud/types";
-import { Capable, CapableToPOJOType } from "./../interfaces/Capable";
+import { Capable, CapableToPOJOType } from "../interfaces/Capable";
 import { OptionPickupModel } from "./OptionPickup";
 import { OptionContentModel } from "./OptionContent";
 import { UnitModel } from "./Unit";

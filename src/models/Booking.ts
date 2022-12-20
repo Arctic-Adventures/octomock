@@ -9,7 +9,7 @@ import {
   DeliveryMethod,
   BookingUnitItemSchema,
 } from "@octocloud/types";
-import { Capable, CapableToPOJOType } from "./../interfaces/Capable";
+import { Capable, CapableToPOJOType } from "../interfaces/Capable";
 import { BookingPickupModel } from "./BookingPickup";
 import { BookingPricingModel } from "./BookingPricing";
 import { BookingContentModel } from "./BookingContent";

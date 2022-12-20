@@ -1,6 +1,6 @@
 import { CapabilityId, AvailabilityBodySchema } from "@octocloud/types";
-import { InvalidAvailabilityIdError, BadRequestError } from "./../models/Error";
-import { ProductModel } from "./../models/Product";
+import { InvalidAvailabilityIdError, BadRequestError } from "../models/Error";
+import { ProductModel } from "../models/Product";
 import { ProductService } from "./ProductService";
 import { AvailabilityGenerator } from "../generators/AvailabilityGenerator";
 import { eachDayOfInterval, isMatch } from "date-fns";

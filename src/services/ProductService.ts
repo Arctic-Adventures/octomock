@@ -1,5 +1,5 @@
-import { ProductRepository } from "./../repositories/ProductRepository";
-import { ProductModel } from "./../models/Product";
+import { ProductRepository } from "../repositories/ProductRepository";
+import { ProductModel } from "../models/Product";
 
 interface IProductService {
   getProducts(): ProductModel[];

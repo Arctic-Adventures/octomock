@@ -8,11 +8,11 @@ import {
   DeliveryMethod,
   RedemptionMethod,
 } from "@octocloud/types";
-import { CapableToPOJOType, Capable } from "./../interfaces/Capable";
+import { CapableToPOJOType, Capable } from "../interfaces/Capable";
 import { ProductPricingModel } from "./ProductPricing";
 import { ProductPickupModel } from "./ProductPickup";
 import { ProductContentModel } from "./ProductContent";
-import { OptionModel } from "./../models/Option";
+import { OptionModel } from "./Option";
 import { AvailabilityConfigModel } from "./AvailabilityConfig";
 
 export class ProductModel implements Capable {

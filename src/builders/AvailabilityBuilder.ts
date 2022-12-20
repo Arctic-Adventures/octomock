@@ -1,14 +1,14 @@
 import {
-  Pricing,
-  CapabilityId,
   AvailabilityStatus,
+  AvailabilityUnit,
+  CapabilityId,
   DurationUnit,
+  Pricing,
   PricingPer,
   PricingUnit,
-  AvailabilityUnit,
 } from "@octocloud/types";
 import * as R from "ramda";
-import { InvalidOptionIdError, InvalidUnitIdError } from "./../models/Error";
+import { InvalidOptionIdError, InvalidUnitIdError } from "../models/Error";
 import { addDays, addHours, addMinutes, startOfDay } from "date-fns";
 import { AvailabilityModel } from "../models/Availability";
 import { ProductModel } from "../models/Product";
@@ -49,50 +49,45 @@ export class AvailabilityBuilder {
         }, 0)
       : null;
 
-    const availabilities = option.availabilityLocalStartTimes.map(
-      (startTime) => {
-        const datetime = new Date(`${date}T${startTime}`);
-        const localDateTimeStart = DateHelper.availabilityIdFormat(
-          datetime,
-          product.timeZone
-        );
+    return option.availabilityLocalStartTimes.map((startTime) => {
+      const datetime = new Date(`${date}T${startTime}`);
+      const localDateTimeStart = DateHelper.availabilityIdFormat(
+        datetime,
+        product.timeZone
+      );
 
-        const localDateTimeEnd = this.calculateTimeEnd(
-          datetime,
-          option,
-          product.timeZone
-        );
+      const localDateTimeEnd = this.calculateTimeEnd(
+        datetime,
+        option,
+        product.timeZone
+      );
 
-        const availabilityStatus = this.getStatus({
-          status,
-          unitsCount,
-          capacity,
-        });
+      const availabilityStatus = this.getStatus({
+        status,
+        unitsCount,
+        capacity,
+      });
 
-        const availability = new AvailabilityModel({
-          id: localDateTimeStart,
-          localDateTimeStart,
-          localDateTimeEnd,
-          allDay: option.availabilityLocalStartTimes.length === 1,
-          available: availabilityStatus !== AvailabilityStatus.SOLD_OUT,
-          status: availabilityStatus,
-          vacancies:
-            availabilityStatus === AvailabilityStatus.SOLD_OUT ? 0 : capacity,
-          capacity:
-            availabilityStatus === AvailabilityStatus.SOLD_OUT ? 0 : capacity,
-          maxUnits:
-            availabilityStatus === AvailabilityStatus.SOLD_OUT
-              ? 0
-              : option.restrictions.maxUnits,
-          utcCutoffAt: DateHelper.utcDateFormat(datetime),
-          openingHours: product.availabilityConfig.openingHours,
-          availabilityPricing: this.getPricing(data),
-        });
-
-        return availability;
-      }
-    );
-    return availabilities;
+      return new AvailabilityModel({
+        id: localDateTimeStart,
+        localDateTimeStart,
+        localDateTimeEnd,
+        allDay: option.availabilityLocalStartTimes.length === 1,
+        available: availabilityStatus !== AvailabilityStatus.SOLD_OUT,
+        status: availabilityStatus,
+        vacancies:
+          availabilityStatus === AvailabilityStatus.SOLD_OUT ? 0 : capacity,
+        capacity:
+          availabilityStatus === AvailabilityStatus.SOLD_OUT ? 0 : capacity,
+        maxUnits:
+          availabilityStatus === AvailabilityStatus.SOLD_OUT
+            ? 0
+            : option.restrictions.maxUnits,
+        utcCutoffAt: DateHelper.utcDateFormat(datetime),
+        openingHours: product.availabilityConfig.openingHours,
+        availabilityPricing: this.getPricing(data),
+      });
+    });
   }
 
   private getPricing = (

@@ -5,7 +5,7 @@ import {
   AvailabilityType,
   OpeningHours,
 } from "@octocloud/types";
-import { PricingConfig } from "./../builders/ProductBuilder";
+import { PricingConfig } from "../builders/ProductBuilder";
 import { OptionConfigModel } from "./OptionConfig";
 import * as R from "ramda";
 

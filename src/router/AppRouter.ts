@@ -1,7 +1,7 @@
 import { bookingRouter } from "./modules/Booking";
 import { availabilityRouter } from "./modules/Availability";
 import { productRouter } from "./modules/Prodduct";
-import { CapabilityController } from "./../controllers/CapabilityController";
+import { CapabilityController } from "../controllers/CapabilityController";
 import Router from "@koa/router";
 import { ValidationController } from "../services/validation/Controller";
 import { validationConfigSchema } from "../schemas/Validation";
@@ -16,13 +16,12 @@ router.use(supplierRouter.routes());
 router.use(productRouter.routes());
 router.use(availabilityRouter.routes());
 router.use(bookingRouter.routes());
-router.get("/capabilities", async (ctx, _) => {
-  const data = await capabilityController.getCapabilities();
-  ctx.body = data;
+router.get("/capabilities", async (ctx) => {
+  ctx.body = await capabilityController.getCapabilities();
   ctx.toJSON();
 });
 
-router.post("/validate", async (ctx, _) => {
+router.post("/validate", async (ctx) => {
   // create some init class
   await validationConfigSchema.validate(ctx.request.body);
   const schema = validationConfigSchema.cast(ctx.request.body);

@@ -1,7 +1,7 @@
 import { Booking } from "@octocloud/types";
-import { InvalidBookingUUIDError } from "./../models/Error";
-import { GetBookingSchema, GetBookingsSchema } from "./../schemas/Booking";
-import { BookingModel } from "./../models/Booking";
+import { InvalidBookingUUIDError } from "../models/Error";
+import { GetBookingSchema, GetBookingsSchema } from "../schemas/Booking";
+import { BookingModel } from "../models/Booking";
 import { DB } from "../storage/Database";
 import { DateHelper } from "../helpers/DateHelper";
 

@@ -1,28 +1,28 @@
 import { addMinutes } from "date-fns";
 import {
+  BookingAvailability,
+  BookingContactSchema,
+  BookingStatus,
+  BookingUnitItemSchema,
   DeliveryFormat,
   DeliveryMethod,
-  BookingStatus,
-  BookingAvailability,
-  Ticket,
   RedemptionMethod,
-  BookingUnitItemSchema,
-  BookingContactSchema,
+  Ticket,
 } from "@octocloud/types";
 
 import {
+  CancelBookingSchema,
   ConfirmBookingSchema,
   CreateBookingSchema,
-  CancelBookingSchema,
   ExtendBookingSchema,
   UpdateBookingSchema,
 } from "../schemas/Booking";
-import { UnitItemModel } from "./../models/UnitItemModel";
-import { InvalidOptionIdError, InvalidUnitIdError } from "./../models/Error";
-import { DataGenerator } from "./../generators/DataGenerator";
-import { OptionModel } from "./../models/Option";
-import { ProductModel } from "./../models/Product";
-import { BookingModel } from "./../models/Booking";
+import { UnitItemModel } from "../models/UnitItemModel";
+import { InvalidOptionIdError, InvalidUnitIdError } from "../models/Error";
+import { DataGenerator } from "../generators/DataGenerator";
+import { OptionModel } from "../models/Option";
+import { ProductModel } from "../models/Product";
+import { BookingModel } from "../models/Booking";
 import { DateHelper } from "../helpers/DateHelper";
 
 interface BookingBuilderData {
@@ -50,7 +50,7 @@ export class BookingBuilder {
 
     const voucher = this.createVoucher(data.product);
 
-    const bookingModel = new BookingModel({
+    return new BookingModel({
       id: DataGenerator.generateUUID(),
       uuid: schema.uuid ?? DataGenerator.generateUUID(),
       resellerReference: schema.resellerReference ?? null,
@@ -71,8 +71,6 @@ export class BookingBuilder {
       utcConfirmedAt: null,
       notes: schema.notes ?? null,
     });
-
-    return bookingModel;
   }
 
   confirmBooking(
@@ -81,7 +79,7 @@ export class BookingBuilder {
   ): BookingModel {
     const status = BookingStatus.CONFIRMED;
 
-    const bookingModel = new BookingModel({
+    return new BookingModel({
       id: booking.id,
       uuid: booking.uuid,
       resellerReference: schema.resellerReference ?? booking.resellerReference,
@@ -100,8 +98,6 @@ export class BookingBuilder {
       notes: schema.notes ?? booking.notes,
       voucher: this.getVoucher(booking, status),
     });
-
-    return bookingModel;
   }
 
   updateBooking(
@@ -123,7 +119,7 @@ export class BookingBuilder {
       schema,
       rebookedBooking
     );
-    const bookingModel = new BookingModel({
+    return new BookingModel({
       id: booking.id,
       uuid: booking.uuid,
       resellerReference: schema.resellerReference ?? booking.resellerReference,
@@ -148,8 +144,6 @@ export class BookingBuilder {
       notes: schema.notes ?? booking.notes,
       voucher: this.getVoucher(rebookedBooking ?? booking, status),
     });
-
-    return bookingModel;
   }
 
   private updateUnitItems = (
@@ -172,7 +166,7 @@ export class BookingBuilder {
   ): BookingModel {
     const status = BookingStatus.ON_HOLD;
 
-    const bookingModel = new BookingModel({
+    return new BookingModel({
       id: booking.id,
       uuid: booking.uuid,
       resellerReference: booking.resellerReference,
@@ -193,8 +187,6 @@ export class BookingBuilder {
       notes: booking.notes,
       voucher: this.getVoucher(booking, status),
     });
-
-    return bookingModel;
   }
 
   private getVoucher = (
@@ -235,7 +227,7 @@ export class BookingBuilder {
       utcCancelledAt: DateHelper.utcDateFormat(new Date()),
     };
 
-    const bookingModel = new BookingModel({
+    return new BookingModel({
       id: booking.id,
       uuid: booking.uuid,
       resellerReference: booking.resellerReference,
@@ -256,8 +248,6 @@ export class BookingBuilder {
       cancellation,
       cancellable: false,
     });
-
-    return bookingModel;
   }
 
   private generateTickets = (

@@ -4,7 +4,7 @@ import { ScenarioHelper, ScenarioHelperData } from "./ScenarioHelper";
 import {
   ErrorType,
   ValidatorError,
-} from "./../../../validators/backendValidator/ValidatorHelpers";
+} from "../../../validators/backendValidator/ValidatorHelpers";
 import { AvailabilityCalendarValidator } from "../../../validators/backendValidator/AvailabilityCalendar/AvailabilityCalendarValidator";
 
 export class AvailabilityCalendarScenarioHelper extends ScenarioHelper {
